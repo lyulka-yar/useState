@@ -1,12 +1,12 @@
-import { Link, Switch } from 'react-router-dom';
+import React, {Component} from 'react';
+import { Link, Switch, withRouter,Route} from 'react-router-dom';
 import logo from '../logo.svg';
 import Calculator from './Calculator';
-import {withRouter,Route} from 'react-router-dom';
 
 class Header extends Component {
 
-	render() { 
-		return ( 
+	render() {
+		return (
 			<div>
 			<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +19,6 @@ class Header extends Component {
 		 );
 	}
 }
- 
+
 export default withRouter(Header);
 
