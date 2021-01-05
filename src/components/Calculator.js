@@ -18,10 +18,6 @@ const Calculator = () => {
 
     }
 
-    // const reset = () => {
-    //     setCount(0);
-    // }
-
     const getVal = (value) => {
         let number = +value;
         !isNaN(number)
