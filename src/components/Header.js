@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import { Link, Switch } from 'react-router-dom';
 import logo from '../logo.svg';
 import Calculator from './Calculator';
@@ -22,3 +21,4 @@ class Header extends Component {
 }
  
 export default withRouter(Header);
+
