@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 
 
@@ -14,20 +15,14 @@ const Calculator = () => {
 				? setCount(num)
 				: setCount(0)
 		}
+  }
 
-    }
-
-    // const reset = () => {
-    //     setCount(0);
-    // }
-
-    const getVal = (value) => {
+  const getVal = (value) => {
         let number = +value;
         !isNaN(number)
             ? setCount((prev) => parseInt(prev + number))
             : setCount('WRONG try one more time')
     }
-
 
     return (
         <div className="wrapper">
@@ -37,7 +32,6 @@ const Calculator = () => {
             }
             <input style={{textAlign: 'center'}} placeholder={'type a number'}
                    onInput={({currentTarget:{value}}) => getVal(value)} type="text"/>
-
         </div>
     );
 }
