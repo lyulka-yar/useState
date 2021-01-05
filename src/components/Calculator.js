@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {withRouter,Link} from 'react-router-dom';
 
 
 const Calculator = () => {
@@ -35,8 +36,9 @@ const Calculator = () => {
             <input style={{textAlign: 'center'}} placeholder={'type a number'}
                    onChange={({currentTarget:{value}}) => setInput(value)} type="text"/>
                    <button onClick={() =>getVal(input)}>Submit</button>
+            <Link className={'homePage'} to={'/'}>home</Link>
         </div>
     );
 }
 
-export default Calculator;
+export default withRouter(Calculator);
