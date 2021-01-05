@@ -1,9 +1,9 @@
-
 import React, {useState} from 'react';
 
 
 const Calculator = () => {
     const [count, setCount] = useState(0);
+    const [input, setInput] = useState(0);
     const arr = [1, -1, 100, -100, 'reset'];
 
     const multiply = (value) => {
@@ -15,14 +15,16 @@ const Calculator = () => {
 				? setCount(num)
 				: setCount(0)
 		}
-  }
 
-  const getVal = (value) => {
+    }
+
+    const getVal = (value) => {
         let number = +value;
         !isNaN(number)
             ? setCount((prev) => parseInt(prev + number))
             : setCount('WRONG try one more time')
     }
+
 
     return (
         <div className="wrapper">
@@ -31,7 +33,8 @@ const Calculator = () => {
                 arr.map(item => <button onClick={() => multiply(item)}>{item}</button>)
             }
             <input style={{textAlign: 'center'}} placeholder={'type a number'}
-                   onInput={({currentTarget:{value}}) => getVal(value)} type="text"/>
+                   onChange={({currentTarget:{value}}) => setInput(value)} type="text"/>
+                   <button onClick={() =>getVal(input)}>Submit</button>
         </div>
     );
 }
